@@ -6,121 +6,147 @@
 #    By: abary <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 12:31:57 by abary             #+#    #+#              #
-#    Updated: 2015/11/25 20:59:23 by abary            ###   ########.fr        #
+#    Updated: 2015/11/29 12:24:03 by abary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
+NAME = libft.a
 
-CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
-SRC = sources/ft_strlen.c\
-		sources/ft_strstr.c\
-		sources/ft_strcpy.c\
-		sources/ft_strdup.c\
-		sources/ft_strcat.c\
-		sources/ft_strcmp.c\
-		sources/ft_strncpy.c\
-		sources/ft_strncat.c\
-		sources/ft_strlcat.c\
-		sources/ft_strchr.c\
-		sources/ft_strrchr.c\
-		sources/ft_strnstr.c\
-		sources/ft_strncmp.c\
-		sources/ft_atoi.c\
-		sources/ft_isalpha.c\
-		sources/ft_isdigit.c\
-		sources/ft_isalnum.c\
-		sources/ft_isascii.c\
-		sources/ft_isprint.c\
-		sources/ft_toupper.c\
-		sources/ft_tolower.c\
-		sources/ft_memset.c\
-		sources/ft_bzero.c\
-		sources/ft_memcpy.c\
-		sources/ft_memccpy.c\
-		sources/ft_memmove.c\
-		sources/ft_memchr.c\
-		sources/ft_memcmp.c\
-		sources/ft_putchar.c\
-		sources/ft_putstr.c\
-		sources/ft_memdel.c\
-		sources/ft_strnew.c\
-		sources/ft_strdel.c\
-		sources/ft_strclr.c\
-		sources/ft_striter.c\
-		sources/ft_striteri.c\
-		sources/ft_strmap.c\
-		sources/ft_strmapi.c\
-		sources/ft_strequ.c\
-		sources/ft_strnequ.c\
-		sources/ft_strsub.c\
-		sources/ft_strjoin.c\
-		sources/ft_strtrim.c\
-		sources/ft_strsplit.c\
-		sources/ft_itoa.c
+SRC = ft_strlen.c\
+		ft_strstr.c\
+		ft_strcpy.c\
+		ft_strdup.c\
+		ft_strcat.c\
+		ft_strcmp.c\
+		ft_strncpy.c\
+		ft_strncat.c\
+		ft_strlcat.c\
+		ft_strchr.c\
+		ft_strrchr.c\
+		ft_strnstr.c\
+		ft_strncmp.c\
+		ft_atoi.c\
+		ft_isalpha.c\
+		ft_isdigit.c\
+		ft_isalnum.c\
+		ft_isascii.c\
+		ft_isprint.c\
+		ft_toupper.c\
+		ft_tolower.c\
+		ft_memset.c\
+		ft_bzero.c\
+		ft_memcpy.c\
+		ft_memccpy.c\
+		ft_memmove.c\
+		ft_memchr.c\
+		ft_memcmp.c\
+		ft_putchar.c\
+		ft_putstr.c\
+		ft_memdel.c\
+		ft_strnew.c\
+		ft_strdel.c\
+		ft_strclr.c\
+		ft_striter.c\
+		ft_striteri.c\
+		ft_strmap.c\
+		ft_strmapi.c\
+		ft_strequ.c\
+		ft_strnequ.c\
+		ft_strsub.c\
+		ft_strjoin.c\
+		ft_strtrim.c\
+		ft_strsplit.c\
+		ft_itoa.c\
+		ft_putendl.c\
+		ft_putnbr.c\
+		ft_putchar_fd.c\
+		ft_putendl_fd.c\
+		ft_putnbr_fd.c\
+		ft_lstnew.c\
+		ft_lstdelone.c\
+		ft_lstdel.c\
+		ft_lstadd.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
+		ft_putstr_fd.c\
+		ft_memalloc.c
+
+OBJET = ft_strlen.o\
+		ft_strstr.o\
+		ft_strcpy.o\
+		ft_strdup.o\
+		ft_strcat.o\
+		ft_strcmp.o\
+		ft_strncpy.o\
+		ft_strncat.o\
+		ft_strlcat.o\
+		ft_strchr.o\
+		ft_strrchr.o\
+		ft_strnstr.o\
+		ft_strncmp.o\
+		ft_atoi.o\
+		ft_isalpha.o\
+		ft_isdigit.o\
+		ft_isalnum.o\
+		ft_isascii.o\
+		ft_isprint.o\
+		ft_toupper.o\
+		ft_tolower.o\
+		ft_memset.o\
+		ft_bzero.o\
+		ft_memcpy.o\
+		ft_memccpy.o\
+		ft_memmove.o\
+		ft_memchr.o\
+		ft_memcmp.o\
+		ft_putchar.o\
+		ft_putstr.o\
+		ft_memdel.o\
+		ft_strnew.o\
+		ft_strdel.o\
+		ft_strclr.o\
+		ft_striter.o\
+		ft_striteri.o\
+		ft_strmap.o\
+		ft_strmapi.o\
+		ft_strequ.o\
+		ft_strnequ.o\
+		ft_strsub.o\
+		ft_strjoin.o\
+		ft_strtrim.o\
+		ft_strsplit.o\
+		ft_itoa.o\
+		ft_putendl.o\
+		ft_putnbr.o\
+		ft_putchar_fd.o\
+		ft_putendl_fd.o\
+		ft_putnbr_fd.o\
+		ft_lstnew.o\
+		ft_lstdelone.o\
+		ft_lstdel.o\
+		ft_lstadd.o\
+		ft_lstiter.o\
+		ft_lstmap.o\
+		ft_putstr_fd.o\
+		ft_memalloc.o
+
 
 OBJ = $(SRC:.c=.o)
 
-OBJET = sources/ft_strlen.o\
-		sources/ft_strstr.o\
-		sources/ft_strcpy.o\
-		sources/ft_strdup.o\
-		sources/ft_strcat.o\
-		sources/ft_strcmp.o\
-		sources/ft_strncpy.o\
-		sources/ft_strncat.o\
-		sources/ft_strlcat.o\
-		sources/ft_strchr.o\
-		sources/ft_strrchr.o\
-		sources/ft_strnstr.o\
-		sources/ft_strncmp.o\
-		sources/ft_atoi.o\
-		sources/ft_isalpha.o\
-		sources/ft_isdigit.o\
-		sources/ft_isalnum.o\
-		sources/ft_isascii.o\
-		sources/ft_isprint.o\
-		sources/ft_toupper.o\
-		sources/ft_tolower.o\
-		sources/ft_memset.o\
-		sources/ft_bzero.o\
-		sources/ft_memcpy.o\
-		sources/ft_memccpy.o\
-		sources/ft_memmove.o\
-		sources/ft_memchr.o\
-		sources/ft_memcmp.o\
-		sources/ft_putchar.o\
-		sources/ft_putstr.o\
-		sources/ft_memdel.o\
-		sources/ft_strnew.o\
-		sources/ft_strdel.o\
-		sources/ft_strclr.o\
-		sources/ft_striter.o\
-		sources/ft_striteri.o\
-		sources/ft_strmap.o\
-		sources/ft_strmapi.o\
-		sources/ft_strequ.o\
-		sources/ft_strnequ.o\
-		sources/ft_strsub.o\
-		sources/ft_strjoin.o\
-		sources/ft_strtrim.o\
-		sources/ft_strsplit.o\
-		sources/ft_itoa.o
-
-
-HEADERS = includes/libft.h
-
 $(NAME) : $(OBJ)
-	ar -rv libft.a $(OBJET)
-	$(CC) -I -Wall -Werror -Wextra $(HEADERS) main.c libft.a
+	ar -r $(NAME) $(OBJ)
+	ranlib $(NAME)
+	gcc -I libft.h main.c libft.a
 
-all :
+all : $(NAME)
 
 clean :
 	rm -rf $(OBJET)
 
-fclean :
+fclean : clean
+	rm -rf $(NAME)
 
-re :
+re : fclean all
 
