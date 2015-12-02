@@ -6,22 +6,24 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:53:35 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:28:03 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 19:41:45 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Alloue (avec malloc(3)) et retourne une chaine de caractères “fraiche” terminée par un ’\0’ résultant de la concaténation de s1 et s2. Si l’allocation echoue, la fonction renvoie NULL.*/
-
 #include "libft.h"
+#include <stdlib.h>
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *str;
+	char			*str;
 	unsigned int	nb;
 
+	if (!s1 || !s2)
+		return (NULL);
 	nb = ft_strlen(s1) + ft_strlen(s2);
 	str = (char *)malloc(sizeof(char *) * nb + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	nb = 0;
 	while (*s1)
 	{

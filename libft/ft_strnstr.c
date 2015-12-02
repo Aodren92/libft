@@ -6,17 +6,27 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:45:28 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 16:33:10 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 14:15:35 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-//a verif sur le pointeur de retour
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+#include <string.h>
+
+static	unsigned int	ft_search(const char *s1, const char *s2,
+		size_t n, unsigned int nb)
 {
-	unsigned int nb;
-	char *tmp;
-	unsigned int nbtmp;
+	while (*s1 && *(s2 + nb) == *s1 && *(s2 + nb) && n > 0)
+	{
+		n--;
+		s1++;
+		nb++;
+	}
+	return (nb);
+}
+
+char					*ft_strnstr(const char *s1, const char *s2, size_t n)
+{
+	unsigned int	nb;
 
 	if (!*s2)
 		return ((char *)(s1));
@@ -25,21 +35,12 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		nb = 0;
 		if (*s1 == *(s2 + nb))
 		{
-			tmp = (char *)s1;
-			nbtmp = n;
-			while (*s1 && *(s2 + nb) == *s1 && *(s2 + nb) && n > 0)
-			{
-				n--;
-				s1++;
-				nb++;
-			}
+			nb = ft_search(s1, s2, n, nb);
 			if (!*(s2 + nb))
-				return ((char *)(s1 - nb));
-			s1 = tmp;
-			n = nbtmp;
+				return ((char *)(s1));
 		}
 		n--;
 		s1++;
 	}
-	return (0);
+	return (NULL);
 }

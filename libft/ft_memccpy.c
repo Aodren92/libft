@@ -6,44 +6,75 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 11:36:27 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 17:31:00 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 11:49:02 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-void	*ft_memccpy(void *dst, const void *src, int c ,size_t n)
+#include <string.h>
+
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int	nb;
+	size_t	nb;
 
 	nb = 0;
-	while (n  > 0)
+	if (src && dst)
 	{
-		if (c == *((unsigned char *)src + nb))
-			return (dst);
+		while (n > 0 && ((unsigned char)c != *((unsigned char *)src)))
+		{
+			*((unsigned char *)dst + nb) = *((unsigned char *)src);
+			n--;
+			nb++;
+			src++;
+		}
+		if ((unsigned char)c == *((unsigned char *)src) && n > 0)
+		{
+			return (dst + ++nb);
+		}
 		else
-			*((unsigned char *)dst + nb) = *((unsigned char *)src + nb);
-		n--;
-		nb++;
+			return (NULL);
 	}
-
-	return (0);
-}*/
-
-void	*ft_memccpy(void *dst, const void *src, int c ,size_t n)
+	return (NULL);
+}
+/*
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned int	nb;
+	size_t	nb;
 
 	nb = 0;
-	while (n  > 0 && ((unsigned char)c != *((unsigned char *)src)))
+	if (src && dst)
 	{
-		*((unsigned char *)dst + nb) = *((unsigned char *)src);
-		n--;
-		nb++;
-		src++;
+		while ((unsigned char)c != *((unsigned char *)src) && nb < n)
+		{
+			*((unsigned char *)dst + nb) = *((unsigned char *)src);
+			src++;
+			nb++;
+		}
+		if ((unsigned char)c == *((unsigned char *)src))
+			return (dst + ++nb);
 	}
-	if ((unsigned char)c == *((unsigned char *)src))
-		return (dst + ++nb);
-	else
-		return (0);
+	return (NULL);
 }
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	size_t	nb;
+
+	nb = 0;
+	if (src && dst)
+	{
+		while (n > 0 && ((unsigned char)c != *((unsigned char *)src)))
+		{
+			*((unsigned char *)dst + nb) = *((unsigned char *)src);
+			n--;
+			nb++;
+			src++;
+		}
+		if ((unsigned char)c == *((unsigned char *)src) && dst && src)
+		{
+			printf("oui");
+			return (dst + ++nb);
+		}
+		else
+			return (NULL);
+	}
+	return (NULL);
+}*/

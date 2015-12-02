@@ -6,11 +6,12 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:26:28 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:26:30 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 14:15:20 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strnew(size_t size)
 {

@@ -6,15 +6,15 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 10:26:44 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:23:39 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:40:08 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void		ft_bzero(void *s, size_t n)
 {
-	unsigned int	nb;
+	size_t		nb;
 
 	nb = 0;
 	while (n > 0)

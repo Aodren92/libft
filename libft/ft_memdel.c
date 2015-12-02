@@ -6,14 +6,14 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:29:04 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:26:07 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:11:59 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 void	ft_memdel(void **ap)
 {
-		free(*ap);
-		*ap = 0;
+	free(*ap);
+	*ap = 0;
 }

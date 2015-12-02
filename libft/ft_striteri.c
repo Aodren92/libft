@@ -6,11 +6,11 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:58:07 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:55:20 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:50:19 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
@@ -19,10 +19,12 @@ void ft_striteri(char *s, void (*f)(unsigned int, char *))
 	{
 		while (*s)
 		{
-			f(i, s);
-			s++;
-			i++;
+			if (f)
+			{
+				f(i, s);
+				s++;
+				i++;
+			}
 		}
 	}
-
 }

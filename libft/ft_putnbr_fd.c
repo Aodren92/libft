@@ -6,13 +6,13 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 09:46:18 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:30:25 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:19:04 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_size(int nb)
+static	int			ft_size(int nb)
 {
 	int		size;
 
@@ -25,7 +25,7 @@ int			ft_size(int nb)
 	return (size);
 }
 
-int			ft_dizaine(int nb)
+static	int			ft_dizaine(int nb)
 {
 	int		dizaine;
 
@@ -39,14 +39,7 @@ int			ft_dizaine(int nb)
 	return (dizaine);
 }
 
-int			ft_abs(int nbr)
-{
-	if (nbr < 0)
-		return (nbr * -1);
-	return (nbr);
-}
-
-void ft_putnbr_fd(int n, int fd)
+void				ft_putnbr_fd(int n, int fd)
 {
 	int		dizaine;
 	int		size;
@@ -63,11 +56,10 @@ void ft_putnbr_fd(int n, int fd)
 			ft_putchar_fd('-', fd);
 		while (i < size)
 		{
-			ft_putchar_fd('0' + abs(n / dizaine), fd);
+			ft_putchar_fd('0' + ft_abs(n / dizaine), fd);
 			n %= dizaine;
 			dizaine /= 10;
 			i++;
 		}
 	}
 }
-

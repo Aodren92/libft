@@ -6,19 +6,9 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:34:35 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:20:51 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:45:39 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
-/*
-** fais une copie d'une chaine finis s2 a la fin d'une chaine finis s1 et
-** ajoute un '\0'
-** Param #1 chaine
-** Param #2 chaine a ajouter a la fin de s1
-** Retour Concatenation de s1 et s2\
-*/
 
 char	*ft_strcat(char *s1, const char *s2)
 {

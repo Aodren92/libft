@@ -6,18 +6,21 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:54:05 by abary             #+#    #+#             */
-/*   Updated: 2015/11/25 16:57:07 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:48:33 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_striter(char *s, void (*f)(char *))
+void	ft_striter(char *s, void (*f)(char *))
 {
-	if(f)
+	if (f)
 	{
 		while (*s)
 		{
-			f(s);
-			s++;
+			if (f)
+			{
+				f(s);
+				s++;
+			}
 		}
 	}
 }

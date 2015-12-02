@@ -6,12 +6,12 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 19:11:46 by abary             #+#    #+#             */
-/*   Updated: 2015/11/29 13:04:01 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 14:18:48 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*Alloue (avec malloc(3)) et retourne un tableau de chaines de caractères “fraiches” (toutes terminées par un ’\0’, le tableau également donc) résultant de la découpe de s selon le caractère c. Si l’allocation echoue, la fonction retourne NULL. Exemple : ft_strsplit("*salut*les***etudiants*", ’*’) renvoie le tableau ["salut", "les", "etudiants"].*/
+#include <stdlib.h>
+
 static unsigned int	nbr_of_words(char const *s, char c)
 {
 	unsigned int (nbw);
@@ -40,14 +40,14 @@ static unsigned int	len_of_words(char const *s, char c, unsigned int nb_wrd)
 	word = 0;
 	while (*s)
 	{
-		while (*s && *s ==c)
+		while (*s && *s == c)
 			s++;
 		if (*s && *s != c)
 		{
 			word++;
 			while (*s && *s != c)
 			{
-				if ( word == nb_wrd)
+				if (word == nb_wrd)
 					len++;
 				s++;
 			}
@@ -55,7 +55,9 @@ static unsigned int	len_of_words(char const *s, char c, unsigned int nb_wrd)
 	}
 	return (len);
 }
-static char  *one_word(char const *s, char c , unsigned int nb_wrd, char *one_word)
+
+static char			*one_word(char const *s, char c,
+		unsigned int nb_wrd, char *one_word)
 {
 	unsigned int word;
 	unsigned int nb;
@@ -64,14 +66,14 @@ static char  *one_word(char const *s, char c , unsigned int nb_wrd, char *one_wo
 	word = 0;
 	while (*s)
 	{
-			while (*s && *s ==c)
-				s++;
+		while (*s && *s == c)
+			s++;
 		if (*s && *s != c)
 		{
 			word++;
 			while (*s && *s != c)
 			{
-				if ( word == nb_wrd)
+				if (word == nb_wrd)
 				{
 					*(one_word + nb) = *s;
 					nb++;
@@ -83,23 +85,27 @@ static char  *one_word(char const *s, char c , unsigned int nb_wrd, char *one_wo
 	*(one_word + nb) = '\0';
 	return (one_word);
 }
-char **ft_strsplit(char const *s, char c)
-{
-	char **str;
-	unsigned int nbw;
-	unsigned int ln_wrd;
-	unsigned int i;
 
+char				**ft_strsplit(char const *s, char c)
+{
+	char			**str;
+	unsigned int	nbw;
+	unsigned int	ln_wrd;
+	unsigned int	i;
+
+	if (!s)
+		return (NULL);
 	i = 1;
 	nbw = nbr_of_words(s, c);
 	str = (char **)malloc(sizeof(char *) * nbw + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (i <= nbw)
 	{
 		ln_wrd = len_of_words(s, c, i);
-		*(str + i - 1)= (char *)malloc(sizeof(char ) * ln_wrd + 1);
-		one_word(s, c, i, *(str+ i - 1));
+		if (!(*(str + i - 1) = (char *)malloc(sizeof(char ) * ln_wrd + 1)))
+			return (NULL);
+		one_word(s, c, i, *(str + i - 1));
 		i++;
 	}
 	*(str + i - 1) = NULL;
