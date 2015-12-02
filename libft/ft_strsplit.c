@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 19:11:46 by abary             #+#    #+#             */
-/*   Updated: 2015/12/01 14:18:48 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:11:50 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char				**ft_strsplit(char const *s, char c)
 	while (i <= nbw)
 	{
 		ln_wrd = len_of_words(s, c, i);
-		if (!(*(str + i - 1) = (char *)malloc(sizeof(char ) * ln_wrd + 1)))
+		if (!(*(str + i - 1) = (char *)malloc(sizeof(char) * ln_wrd + 1)))
 			return (NULL);
 		one_word(s, c, i, *(str + i - 1));
 		i++;

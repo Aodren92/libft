@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:26:28 by abary             #+#    #+#             */
-/*   Updated: 2015/12/01 14:15:20 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:33:19 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 
 	str = (char *)malloc(sizeof(char *) * size + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	ft_bzero(str, 0);
 	return (str);
 }

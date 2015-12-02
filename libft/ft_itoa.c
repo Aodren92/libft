@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 20:58:11 by abary             #+#    #+#             */
-/*   Updated: 2015/12/02 14:28:47 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:36:31 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static char			*ft_iota_pos(int nb, int size, int dizaine, char *number)
 	int		i;
 
 	i = 0;
-	if(!(number = (char *)malloc(sizeof(char) * size + 1)))
-			return (NULL);
+	if (!(number = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
 	if (nb < 0)
 	{
 		*number = '-';
@@ -78,7 +78,8 @@ char				*ft_itoa(int n)
 		number = ft_iota_pos(n, size, dizaine, number);
 	else
 	{
-		number = (char *)malloc(sizeof(char) * 2);
+		if (!(number = (char *)malloc(sizeof(char) * 2)))
+			return (NULL);
 		*number = '0';
 		*(number + 1) = '\0';
 	}

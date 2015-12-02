@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 18:11:11 by abary             #+#    #+#             */
-/*   Updated: 2015/12/01 14:20:09 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:35:33 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ char					*ft_strtrim(char const *s)
 	nb = length_whitout_spaces(s);
 	str = (char *)malloc(sizeof(char) * nb + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	str = trim(s, str, nb);
 	return (str);
 }

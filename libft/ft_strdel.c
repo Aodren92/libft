@@ -6,12 +6,12 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:40:10 by abary             #+#    #+#             */
-/*   Updated: 2015/12/02 10:32:27 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:37:09 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
+
 void		ft_strdel(char **as)
 {
 	if (as)
