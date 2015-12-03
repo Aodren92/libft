@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 16:26:28 by abary             #+#    #+#             */
-/*   Updated: 2015/12/03 12:29:38 by abary            ###   ########.fr       */
+/*   Created: 2015/12/03 10:05:20 by abary             #+#    #+#             */
+/*   Updated: 2015/12/03 10:35:51 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+char	*ft_strrev(char *str)
 {
-	char *str;
+	int		length;
+	int		nbr;
+	int		middle;
+	char	swap;
 
-	str = (char *)malloc(sizeof(char) * size + 1);
-	if (!str)
+	length = 0;
+	if (str)
+		length = ft_strlen(str);
+	if (length == 0)
 		return (NULL);
-	ft_bzero(str, 0);
+	middle = length / 2;
+	nbr = 0;
+	while (length > middle)
+	{
+		swap = *(str + nbr);
+		*(str + nbr) = *(str + length - 1);
+		*(str + length - 1) = swap;
+		nbr++;
+		length--;
+	}
 	return (str);
 }

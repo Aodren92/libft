@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_printbit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 16:26:28 by abary             #+#    #+#             */
-/*   Updated: 2015/12/03 12:29:38 by abary            ###   ########.fr       */
+/*   Created: 2015/12/03 10:43:43 by abary             #+#    #+#             */
+/*   Updated: 2015/12/03 12:23:24 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char	*ft_strnew(size_t size)
+void	ft_printbit(unsigned char byte)
 {
-	char *str;
+	unsigned char octet;
 
-	str = (char *)malloc(sizeof(char) * size + 1);
-	if (!str)
-		return (NULL);
-	ft_bzero(str, 0);
-	return (str);
+	octet = 128;
+	while (octet)
+	{
+		if (octet & byte)
+			ft_putchar('1');
+		else
+			ft_putchar('0');
+		octet = octet >> 1;
+	}
 }

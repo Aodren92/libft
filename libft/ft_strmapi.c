@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:10:02 by abary             #+#    #+#             */
-/*   Updated: 2015/12/01 19:12:59 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/03 12:29:13 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s)
 		return (NULL);
 	nb = 0;
-	new = (char *)malloc(sizeof(char *) * ft_strlen(s) + 1);
+	new = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!new)
 		return (NULL);
 	if (f)
