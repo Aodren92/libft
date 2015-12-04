@@ -6,25 +6,20 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 10:40:41 by abary             #+#    #+#             */
-/*   Updated: 2015/12/02 16:28:04 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/04 11:40:16 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *elem;
+	t_list *tmp;
 
-	elem = *alst;
-	if (elem)
+	if (alst && del)
 	{
-		if ((elem = (t_list *)malloc(sizeof(t_list))))
-		{
-			del(elem->content, elem->content_size);
-			free(elem);
-			*alst = NULL;
-		}
+		tmp = *alst;
+		del(tmp->content, tmp->content_size);
+		ft_memdel((void **)alst);
 	}
 }
