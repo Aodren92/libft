@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 16:09:39 by abary             #+#    #+#             */
-/*   Updated: 2015/12/01 12:10:05 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/04 14:35:54 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 	unsigned int	nb;
 
 	nb = ft_strlen(s1);
-	result = (char *)malloc(sizeof(char) + 1);
+	result = (char *)malloc(sizeof(char) * nb + 1);
 	if (!result)
 		return (NULL);
 	nb = 0;
