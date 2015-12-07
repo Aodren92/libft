@@ -6,7 +6,7 @@
 #    By: abary <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 12:31:57 by abary             #+#    #+#              #
-#    Updated: 2015/12/01 12:07:31 by abary            ###   ########.fr        #
+#    Updated: 2015/12/07 14:14:01 by abary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,10 @@ SRC = ft_strlen.c\
 		ft_putstr_fd.c\
 		ft_memalloc.c\
 		ft_lstadd_end.c\
-		ft_abs.c
+		ft_abs.c\
+		ft_strrev.c\
+		ft_printbit.c\
+		ft_putnbr_base.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -91,3 +94,4 @@ fclean : clean
 
 re : fclean all
 
+.PHONY: all clean flcean re

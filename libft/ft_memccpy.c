@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 11:36:27 by abary             #+#    #+#             */
-/*   Updated: 2015/12/04 12:16:38 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/05 22:21:53 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t	nb;
 
 	nb = 0;
-	if (src && dst)
+	if (src || dst)
 	{
 		while (nb != n)
 		{

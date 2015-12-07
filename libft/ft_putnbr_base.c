@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 19:46:13 by abary             #+#    #+#             */
-/*   Updated: 2015/12/04 19:48:51 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/07 10:59:27 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	ft_putnbrp_base(int nbr, int base)
 	if (nbr % base < 10)
 		ft_putchar('0' + nbr % base);
 	else
-		ft_putchar('A' + base - 10);
+		ft_putchar('A' + nbr - 10);
 }
 
 void		ft_putnbr_base(int nbr, int base)

@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:28:56 by abary             #+#    #+#             */
-/*   Updated: 2015/12/03 12:25:33 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/04 21:17:12 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char const *s, int fd);
+void			ft_putnbr_base(int nbr, int base);
 typedef struct	s_list
 {
 	void					*content;
