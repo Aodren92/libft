@@ -6,15 +6,13 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 18:11:11 by abary             #+#    #+#             */
-/*   Updated: 2015/11/29 14:02:51 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:35:33 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Alloue (avec malloc(3)) et retourne une copie de la chaine passée en paramètre sans les espaces blancs au debut et à la fin de cette chaine. On considère comme espaces blancs les caractères ’ ’, ’\n’ et ’\t’. Si s ne contient pas d’espaces blancs au début ou à la fin, la fonction renvoie une copie de s. Si l’allocation echoue, la fonction renvoie NULL.*/
+#include <stdlib.h>
 
-#include "libft.h"
-
-unsigned int	length_whitout_spaces(char const *s)
+static	unsigned int	length_whitout_spaces(char const *s)
 {
 	unsigned int nb;
 
@@ -35,10 +33,10 @@ unsigned int	length_whitout_spaces(char const *s)
 			nb--;
 		}
 	}
-		return (nb);
+	return (nb);
 }
 
-char	*trim(char const *s, char *str, int length)
+static	char			*trim(char const *s, char *str, int length)
 {
 	unsigned int nb;
 
@@ -56,16 +54,17 @@ char	*trim(char const *s, char *str, int length)
 	return (str);
 }
 
-char	*ft_strtrim(char const *s)
+char					*ft_strtrim(char const *s)
 {
-	char *str;
-	unsigned int nb;
+	char			*str;
+	unsigned int	nb;
 
+	if (!s)
+		return (NULL);
 	nb = length_whitout_spaces(s);
-	str = (char *)malloc(sizeof(char *) * nb + 1);
+	str = (char *)malloc(sizeof(char) * nb + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	str = trim(s, str, nb);
 	return (str);
-
 }

@@ -6,13 +6,14 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 09:40:19 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:30:07 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:18:41 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char const *s, int fd)
 {
 	write(fd, s, ft_strlen(s));
 	ft_putchar_fd('\n', fd);

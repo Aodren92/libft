@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                               :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 10:39:39 by abary             #+#    #+#             */
-/*   Updated: 2015/11/29 12:13:12 by abary            ###   ########.fr       */
+/*   Created: 2015/11/30 11:55:51 by abary             #+#    #+#             */
+/*   Updated: 2015/11/30 15:05:57 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t nb;
-	size_t i;	
+	size_t i;
 	size_t save;
 
 	save = size;
@@ -34,6 +34,6 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	if ((nb + i + 1) <= save)
-		*(dst + nb + i)= '\0';
+		*(dst + nb + i) = '\0';
 	return (nb + ft_strlen(src));
 }

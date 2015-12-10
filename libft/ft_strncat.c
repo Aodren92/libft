@@ -6,11 +6,11 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 19:43:10 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:21:56 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 14:11:18 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

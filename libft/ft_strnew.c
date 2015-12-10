@@ -6,19 +6,20 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 16:26:28 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:26:30 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/04 12:12:04 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strnew(size_t size)
 {
 	char *str;
 
-	str = (char *)malloc(sizeof(char *) * size + 1);
+	str = (char *)malloc(sizeof(char) * size + 1);
 	if (!str)
-		return (0);
-	ft_bzero(str, 0);
+		return (NULL);
+	ft_bzero(str, size + 1);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 09:11:06 by abary             #+#    #+#             */
-/*   Updated: 2015/11/29 12:27:03 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:17:25 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,7 @@ static int			ft_dizaine(int nb)
 	return (dizaine);
 }
 
-static int			ft_abs(int nbr)
-{
-	if (nbr < 0)
-		return (nbr * -1);
-	return (nbr);
-}
-
-void		ft_putnbr(int n)
+void				ft_putnbr(int n)
 {
 	int		dizaine;
 	int		size;

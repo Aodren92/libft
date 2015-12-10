@@ -6,11 +6,12 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 20:58:11 by abary             #+#    #+#             */
-/*   Updated: 2015/11/29 12:26:08 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/02 16:36:31 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int			ft_dizaine(int n)
 {
@@ -41,19 +42,13 @@ static int			ft_size(int n)
 	return (size);
 }
 
-static int			ft_abs(int nbr)
-{
-	if (nbr < 0)
-		return (nbr * -1);
-	return (nbr);
-}
-
-static char		*ft_iota_pos(int nb, int size, int dizaine, char *number)
+static char			*ft_iota_pos(int nb, int size, int dizaine, char *number)
 {
 	int		i;
 
 	i = 0;
-	number = (char *)malloc(sizeof(char) * size + 1);
+	if (!(number = (char *)malloc(sizeof(char) * size + 1)))
+		return (NULL);
 	if (nb < 0)
 	{
 		*number = '-';
@@ -70,7 +65,7 @@ static char		*ft_iota_pos(int nb, int size, int dizaine, char *number)
 	return (number);
 }
 
-char		*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	int		dizaine;
 	int		size;
@@ -83,7 +78,8 @@ char		*ft_itoa(int n)
 		number = ft_iota_pos(n, size, dizaine, number);
 	else
 	{
-		number = (char *)malloc(sizeof(char) * 2);
+		if (!(number = (char *)malloc(sizeof(char) * 2)))
+			return (NULL);
 		*number = '0';
 		*(number + 1) = '\0';
 	}

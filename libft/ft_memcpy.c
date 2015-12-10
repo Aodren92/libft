@@ -6,15 +6,15 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 11:11:00 by abary             #+#    #+#             */
-/*   Updated: 2015/11/29 11:25:04 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:43:07 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	nb;
+	size_t	nb;
 
 	nb = 0;
 	while (n > 0)

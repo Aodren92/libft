@@ -6,22 +6,23 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:24:54 by abary             #+#    #+#             */
-/*   Updated: 2015/11/28 14:27:50 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/04 12:15:46 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*Alloue (avec malloc(3)) et retourne la copie “fraiche” d’un tronçon de la chaine de caractères passée en paramètre. Le tronçon commence à l’index start et à pour longueur len. Si start et len ne désignent pas un tronçon de chaine valide, le comportement est indéterminé. Si l’allocation échoue, la fonction renvoie NULL.*/
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	nb;
 	char			*str;
 
+	if (!s)
+		return (NULL);
 	nb = 0;
-	str = (char *)malloc(sizeof(char *) * len + 1);
+	str = (char *)ft_memalloc(sizeof(char) * len + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (start > 0)
 	{
 		s++;

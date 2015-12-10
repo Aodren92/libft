@@ -6,7 +6,7 @@
 #    By: abary <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/23 12:31:57 by abary             #+#    #+#              #
-#    Updated: 2015/11/29 12:24:03 by abary            ###   ########.fr        #
+#    Updated: 2015/12/07 14:14:01 by abary            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,82 +71,31 @@ SRC = ft_strlen.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
 		ft_putstr_fd.c\
-		ft_memalloc.c
-
-OBJET = ft_strlen.o\
-		ft_strstr.o\
-		ft_strcpy.o\
-		ft_strdup.o\
-		ft_strcat.o\
-		ft_strcmp.o\
-		ft_strncpy.o\
-		ft_strncat.o\
-		ft_strlcat.o\
-		ft_strchr.o\
-		ft_strrchr.o\
-		ft_strnstr.o\
-		ft_strncmp.o\
-		ft_atoi.o\
-		ft_isalpha.o\
-		ft_isdigit.o\
-		ft_isalnum.o\
-		ft_isascii.o\
-		ft_isprint.o\
-		ft_toupper.o\
-		ft_tolower.o\
-		ft_memset.o\
-		ft_bzero.o\
-		ft_memcpy.o\
-		ft_memccpy.o\
-		ft_memmove.o\
-		ft_memchr.o\
-		ft_memcmp.o\
-		ft_putchar.o\
-		ft_putstr.o\
-		ft_memdel.o\
-		ft_strnew.o\
-		ft_strdel.o\
-		ft_strclr.o\
-		ft_striter.o\
-		ft_striteri.o\
-		ft_strmap.o\
-		ft_strmapi.o\
-		ft_strequ.o\
-		ft_strnequ.o\
-		ft_strsub.o\
-		ft_strjoin.o\
-		ft_strtrim.o\
-		ft_strsplit.o\
-		ft_itoa.o\
-		ft_putendl.o\
-		ft_putnbr.o\
-		ft_putchar_fd.o\
-		ft_putendl_fd.o\
-		ft_putnbr_fd.o\
-		ft_lstnew.o\
-		ft_lstdelone.o\
-		ft_lstdel.o\
-		ft_lstadd.o\
-		ft_lstiter.o\
-		ft_lstmap.o\
-		ft_putstr_fd.o\
-		ft_memalloc.o
-
+		ft_memalloc.c\
+		ft_lstadd_end.c\
+		ft_abs.c\
+		ft_strrev.c\
+		ft_printbit.c\
+		ft_putnbr_base.c
 
 OBJ = $(SRC:.c=.o)
 
 $(NAME) : $(OBJ)
 	ar -r $(NAME) $(OBJ)
 	ranlib $(NAME)
+<<<<<<< HEAD:libft/makefile
 	gcc -I libft.h main.c libft.a -lbsd
+=======
+>>>>>>> eca50a9a7dd2d11100c15aaaef7ae60383fe070a:libft/Makefile
 
 all : $(NAME)
 
 clean :
-	rm -rf $(OBJET)
+	rm -rf $(OBJ)
 
 fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
 
+.PHONY: all clean flcean re

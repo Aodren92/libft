@@ -6,9 +6,11 @@
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 11:43:12 by abary             #+#    #+#             */
-/*   Updated: 2015/11/24 13:24:27 by abary            ###   ########.fr       */
+/*   Updated: 2015/12/01 12:46:01 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -20,5 +22,5 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (*s == c)
 		return (char *)(s);
-	return (0);
+	return (NULL);
 }

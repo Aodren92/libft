@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_printbit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abary <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/25 16:54:05 by abary             #+#    #+#             */
-/*   Updated: 2015/12/02 16:36:49 by abary            ###   ########.fr       */
+/*   Created: 2015/12/03 10:43:43 by abary             #+#    #+#             */
+/*   Updated: 2015/12/03 12:23:24 by abary            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striter(char *s, void (*f)(char *))
+#include "libft.h"
+
+void	ft_printbit(unsigned char byte)
 {
-	if (f)
+	unsigned char octet;
+
+	octet = 128;
+	while (octet)
 	{
-		while (*s)
-		{
-			if (f)
-			{
-				f(s);
-			}
-			s++;
-		}
+		if (octet & byte)
+			ft_putchar('1');
+		else
+			ft_putchar('0');
+		octet = octet >> 1;
 	}
 }
