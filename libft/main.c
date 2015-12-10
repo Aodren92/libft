@@ -14,19 +14,46 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <strings.h>
+#include <string.h>
+#include <bsd/string.h>
 #define TEST "-2147483648"
 #define TEST2 ""
 
 int		main()
 {
-	printf("%d\n", ft_strequ("", ""));
+	char *str = "Un*jour*je*serais*le*meilleur*dresseur* *    *    * du*monde*";
+	char **tab = ft_strsplit(str, '*');
+	char *str2 = "Un*jour*je*serais*le*meilleur*dresseur* *    *    * du*monde*";
+	char **tab2 = ft_strsplit(str2, '*');
+	char *src = "test";	
+	int taille = 5;
+	while(*tab)
+	{
 
+
+	printf("ft_strlcat : %zu", ft_strlcat(*tab,src,taille));
+	printf("strlcat : %zu\n", strlcat(*tab2,src,taille));
+	printf("%s\n", *tab);
+	printf("%s\n", *tab2);
+		tab++;
+		tab2++;
+	}
+	char buf[10];
+	bzero(buf, 10);
+	taille = ft_strlcat(buf, "abc", 10);
+	printf("%d\n", taille);
+	bzero(buf, 10);
+	taille = strlcat(buf, "abc", 10);
+	printf("%d\n", taille);
+/*	if (strcmp(ft_strsub(str, 8, 8), "je serai") == 0)
+		printf("yes");
+	result = ft_strsub(str, 8, 8);*/
 	/*
-	mt_assert(list->content_size == 21);
-	mt_assert(list->next->content_size == 100);
-	mt_assert(!!map && map->content_size == 42);
-	mt_assert(!!map && map->next->content_size == 200);
-	*/
+	   mt_assert(list->content_size == 21);
+	   mt_assert(list->next->content_size == 100);
+	   mt_assert(!!map && map->content_size == 42);
+	   mt_assert(!!map && map->next->content_size == 200);
+	 */
 
 	//mt_assert(list == list2);
 	//mt_assert(list->next != NULL);
@@ -47,7 +74,7 @@ int		main()
 	   ft_putstr("aallh oui");
 	   printf("%zu\n", sizeof(void));
 	//printf("%s\n", a);
-	*/
+	 */
 	/*	int c;
 		unsigned char *z;
 		void *a;
@@ -56,7 +83,7 @@ int		main()
 		a = memset(b, 42, 42);
 		z = (unsigned char *)a;
 		c = 42;
-		*/
+	 */
 	/*	while(c > 0)
 		{
 		printf("%0x\n", *z);
@@ -73,13 +100,13 @@ int		main()
 		z
 		c--;
 		}
-		*/
+	 */
 	/*
 	   ft_bzero(b, 45);
 	//printf("%s\n", b);
 	c = 450 ;
 	z = (unsigned char *)a;
-	*/
+	 */
 	/*void *dst;
 	  void *result;
 	  dst = malloc(sizeof(unsigned char *) * 42);

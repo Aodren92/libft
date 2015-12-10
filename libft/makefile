@@ -138,7 +138,7 @@ OBJ = $(SRC:.c=.o)
 $(NAME) : $(OBJ)
 	ar -r $(NAME) $(OBJ)
 	ranlib $(NAME)
-	gcc -I libft.h main.c libft.a
+	gcc -I libft.h main.c libft.a -lbsd
 
 all : $(NAME)
 
